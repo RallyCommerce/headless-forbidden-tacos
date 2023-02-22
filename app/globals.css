@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+  cursor: url("/taco-emoji.png"), auto;
+
+}
+
+.gradient {
+  position: relative;
+  height: full;
+  background: linear-gradient(180deg, #FF6CC4 0%, #FFD9F0 10.76%, #FCF0B1 20.14%, #B1FCC1 36.81%, #3CC9F5 49.31%, #FCEFB2 62.33%, #FF9CD7 84.2%, #E59CFF 95.14%), linear-gradient(0deg, #FF50B9, #FF50B9), linear-gradient(0deg, #000000, #000000), #FDB442;
+}
+
+
+#contact {
+  scroll-margin-top: 90px;
+}
+
+#help {
+  scroll-margin-top: 90px;
+}
+
+#mission {
+  scroll-margin-top: 90px;
+}
+
+#product {
+  scroll-margin-top: 90px;
+}
