@@ -26,7 +26,7 @@ const Option = ({ option, setSelectedOptions }) => {
             </span>
           </Label>
           <RadioGroup defaultValue={activeOption} onValueChange={(value) => setActiveOption(value)}>
-            <div className="flex items-center space-x-2 mt-2">
+            <div className="flex items-center flex-wrap">
                 {option.values.map((value, i) => (
                    <RadioGroupItem key={i} value={value} id={value.id} >
                     {value.image && (
@@ -41,7 +41,7 @@ const Option = ({ option, setSelectedOptions }) => {
                     )}
               
                     {!value.image && (
-                      <div className="text-sm md:text-base uppercase px-5 py-2 relative rounded-full bg-white flex items-center justify-center">
+                      <div className="text-sm md:text-base uppercase px-5 py-2 rounded-full bg-white relative flex items-center justify-center">
                         {value.name}
                       </div>
                     )}

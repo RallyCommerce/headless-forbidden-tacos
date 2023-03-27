@@ -27,7 +27,7 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitive.Item
       ref={ref}
       className={cn(
-        "relative mt-1 mr-1 rounded-full text:fill-slate-50 flex items-center text-slate-900 hover:border-slate-400 focus:outline-none focus:ring focus:ring-slate-900 focus:ring-offset disabled:cursor-not-allowed disabled:opacity-50",
+        "relative mt-2 mr-4 flex items-center hover:border-slate-400 focus:outline-none",
         className
       )}
       {...props}
