@@ -1,6 +1,8 @@
 import './globals.css'
 
-import Navigation from './components/navigation'
+import { StorefrontProvider } from '@/provider/storefront-provider'
+import Navigation from '@/app/components/navigation'
+import Cart from '@/app/components/cart/cart'
 
 export default function RootLayout({
   children,
@@ -11,9 +13,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="min-h-screen h-full gradient">
-        <Navigation />
-        {children}
+      <body className="min-h-screen h-full gradient overflow-x-hidden">
+      <StorefrontProvider>
+          <Navigation />
+          <Cart />
+          {children}
+        </StorefrontProvider>
       </body>
     </html>
   )

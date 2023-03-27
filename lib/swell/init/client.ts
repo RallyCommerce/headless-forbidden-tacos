@@ -4,6 +4,6 @@ const options = {
   useCamelCase: false
 };
 
-swell.init("forbidden-tacos", "pk_1q74HEYjgyAHPZGPEjBV8RnTSX9xG5ja", options);
+swell.init(`${process.env.NEXT_PUBLIC_SWELL_STORE_ID}`, `${process.env.NEXT_PUBLIC_SWELL_PUBLIC_KEY}`, options);
 
 export { swell }

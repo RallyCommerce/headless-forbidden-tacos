@@ -1,5 +1,9 @@
 import Image from 'next/image'
 import { MarqueeText } from './components/marquees'
+import { getProductBySlug } from '@/lib/swell/products'
+import Carousel from './carousel'
+import Details from './details'
+
 const forbidden = [
   {
     description: "Help Bring It Back"
@@ -16,13 +20,14 @@ const forbidden = [
 
 ]
 
-export default function Home() {
+export default async function Home() {
+
+  const product = await getProductBySlug('forbidden-taco-shirt')
 
   return (
    <main>
-      <div className="h-screen flex items-center w-full mx-auto py-5 overflow-x-hidden">
-
-          <div className="relative flex justify-center w-full">
+      <div className="h-screen flex items-center w-full mx-auto pb-5 overflow-x-hidden">
+          <div className="relative -mt-36 flex justify-center w-full">
             <MarqueeText speed='40' classes='text-8xl md:text-[20rem]' text="Lost, But Not Forgotten." />
             {/* <p className="text-4xl uppercase text-black">Show your passion to bring back the ultimate dessert</p>
             <button type="button" className="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl">Wear For a Cause</button> */}
@@ -109,6 +114,17 @@ export default function Home() {
 
       <div className="my-10 py-5 relative bg-white w-full">
         <MarqueeText direction='right' repeat={20} speed='40' classes='text-5xl md:text-9xl' text="SHOP" />
+      </div>
+
+      <div className="my-10 py-10 max-w-7xl w-full mx-auto px-3 relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="col-span-2 h-[400px] md:h-[700px]">
+            <Carousel product={product} />
+          </div>
+          <div className="col-span-1">
+            <Details product={product} />
+          </div>
+        </div>
       </div>
 
       <div className="my-10 py-10 max-w-7xl w-full mx-auto px-3 relative">
