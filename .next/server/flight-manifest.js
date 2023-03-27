@@ -26,6 +26,32 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
+    "(app-client)/./app/components/button.js": {
+      "": {
+        "id": "(sc_client)/./app/components/button.js",
+        "name": "",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/components/button.js",
+        "name": "*",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/components/button.js",
+        "name": "default",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./app/components/marquees.js": {
       "": {
         "id": "(sc_client)/./app/components/marquees.js",
@@ -320,6 +346,32 @@ self.__RSC_MANIFEST={
     },
     "default": {
       "id": "(app-client)/./app/carousel.jsx",
+      "name": "default",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    }
+  },
+  "/Users/chrisc/Desktop/Rally/headless-forbidden-tacos/app/components/button.js": {
+    "": {
+      "id": "(app-client)/./app/components/button.js",
+      "name": "",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/components/button.js",
+      "name": "*",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./app/components/button.js",
       "name": "default",
       "chunks": [
         "app/page:app/page"

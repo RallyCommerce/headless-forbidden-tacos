@@ -108,7 +108,7 @@ const Details = ({ product }) => {
 
 
       
-      <div className="flex">
+      <div className="flex w-full">
         <button 
           type="button"
           className="w-full rounded-sm bg-black text-white text-md uppercase font-bold px-5 py-8 shadow-md" 

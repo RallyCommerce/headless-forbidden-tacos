@@ -511,8 +511,8 @@ video {
 .top-0 {
   top: 0px;
 }
-.top-6 {
-  top: 1.5rem;
+.top-24 {
+  top: 6rem;
 }
 .z-40 {
   z-index: 40;
@@ -538,31 +538,18 @@ video {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
 }
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
-.-mt-10 {
-  margin-top: -2.5rem;
-}
-.-mt-36 {
-  margin-top: -9rem;
-}
 .ml-5 {
   margin-left: 1.25rem;
-}
-.mr-1 {
-  margin-right: 0.25rem;
 }
 .mr-14 {
   margin-right: 3.5rem;
 }
-.mt-1 {
-  margin-top: 0.25rem;
+.mr-4 {
+  margin-right: 1rem;
 }
 .mt-10 {
   margin-top: 2.5rem;
@@ -575,9 +562,6 @@ video {
 }
 .mt-5 {
   margin-top: 1.25rem;
-}
-.mr-2 {
-  margin-right: 0.5rem;
 }
 .flex {
   display: flex;
@@ -624,8 +608,8 @@ video {
 .h-\[300px\] {
   height: 300px;
 }
-.h-\[500px\] {
-  height: 500px;
+.h-\[400px\] {
+  height: 400px;
 }
 .h-full {
   height: 100%;
@@ -635,9 +619,6 @@ video {
 }
 .h-screen {
   height: 100vh;
-}
-.h-\[400px\] {
-  height: 400px;
 }
 .min-h-\[200px\] {
   min-height: 200px;
@@ -753,30 +734,15 @@ video {
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-x-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
-.space-y-10 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
-}
 .space-y-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-.space-y-3 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
 }
 .space-y-6 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
@@ -1091,6 +1057,10 @@ video {
   background: linear-gradient(180deg, #FF6CC4 0%, #FFD9F0 10.76%, #FCF0B1 20.14%, #B1FCC1 36.81%, #3CC9F5 49.31%, #FCEFB2 62.33%, #FF9CD7 84.2%, #E59CFF 95.14%), linear-gradient(0deg, #FF50B9, #FF50B9), linear-gradient(0deg, #000000, #000000), #FDB442;
 }
 
+#product {
+  scroll-margin-top: 90px;
+}
+
 .placeholder\:text-slate-400::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
@@ -1139,12 +1109,6 @@ video {
   outline-offset: 2px;
 }
 
-.focus\:ring:focus {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -1159,11 +1123,6 @@ video {
 .focus\:ring-slate-400:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(148 163 184 / var(--tw-ring-opacity));
-}
-
-.focus\:ring-slate-900:focus {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(15 23 42 / var(--tw-ring-opacity));
 }
 
 .focus\:ring-opacity-50:focus {
@@ -1289,8 +1248,21 @@ video {
 
 @media (min-width: 768px) {
 
+  .md\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+
+  .md\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
   .md\:mt-5 {
     margin-top: 1.25rem;
+  }
+
+  .md\:flex {
+    display: flex;
   }
 
   .md\:grid {
@@ -1327,6 +1299,10 @@ video {
 
   .md\:justify-center {
     justify-content: center;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:px-5 {
