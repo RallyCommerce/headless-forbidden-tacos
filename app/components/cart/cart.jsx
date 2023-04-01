@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { StorefrontContext } from '@/provider/storefront-provider';
@@ -19,14 +19,14 @@ const Cart = () => {
 
   const {
     cart,
-    getCart,
     open,
     toggleCart,
     clearCart,
-    removeItem
+    removeItem,
+    getCart
   } = useContext(StorefrontContext);
 
-
+  const [loading, setLoading] = useState(false)
 
 
   const thumbnails = {
@@ -92,13 +92,13 @@ const Cart = () => {
                 variants={thumbnails}
                 initial="hidden"
                 animate="visible"
-                className="flex flex-col jusitfy-start flex-grow border border-gray-100 space-y-5 overflow-y-auto p-3">
+                className={`flex flex-col jusitfy-start flex-grow border border-gray-100 space-y-5 overflow-y-auto p-3 ${loading ? 'blur-lg' : ''}`}>
                   {cart?.items?.map((item, i) => (
                     <motion.div 
                       key={item.id} 
                       custom={i}
                       variants={thumbnail}
-                      className="flex items-center space-x-5 shadow-sm">
+                      className={`flex items-center space-x-5 shadow-sm ${loading ? 'blur-lg' : ''}`}>
                       <div className="h-20 w-20 relative">
                         <Image
                           src={item.variant?.images[0].file.url || item.product.images[0].file.url}
@@ -108,7 +108,7 @@ const Cart = () => {
                           
                         />
                       </div>
-                      <div className="flex justify-between items-center">
+                      <div className="flex justify-between items-center w-full pr-2">
                         <div>
                           <p className="font-bold">{item.product.name}</p>
                           <p className="text-sm">{item.variant?.name}</p>
@@ -120,11 +120,26 @@ const Cart = () => {
                           )}
                           <p className="text-xs">Q: {item.quantity}</p>
                         </div>
-                        <div>
-                          <button type="button" onClick={() => removeItem(item.id).then(getCart())} className="focus:outline-none">
-                            <Cross2Icon className="w-4 h-4" />
-                          </button>
-                        </div>
+                       
+                        <button 
+                          type="button" 
+                          className="focus:outline-none"
+                          onClick={
+                            () => {
+                              setLoading(true)
+                              removeItem(item?.id).then(
+                                () => {
+                                  getCart().then(
+                                    () => {
+                                      setLoading(false)
+                                    }
+                                  )
+                                }
+                              )
+                            }}>
+                          <Cross2Icon className="w-4 h-4" />
+                        </button>
+                      
                       </div>
                     </motion.div>
                   ))}
@@ -143,7 +158,26 @@ const Cart = () => {
                 <div className="flex flex-col w-full pb-5">
                   <div className="mt-5 flex flex-col w-full items-center">
                     <CartButton customClass="w-full bg-red-600 text-white rounded-sm shadow-sm px-8 py-5" customText="Proceed to Checkout" />
-                    <button type="button" onClick={() => clearCart().then(getCart())} className="mt-3 cursor-pointer">Clear Cart</button>
+                    <button 
+                      type="button"
+                      onClick={
+                        () => {
+                          setLoading(true)
+                          clearCart().then(
+                            () => {
+                              getCart().then(
+                                () =>{
+                                  setLoading(false)
+                                }
+                              )
+                             
+                            }
+                          )
+                        }}
+                      className="mt-3 cursor-pointer"
+                    >
+                        Clear Cart
+                    </button>
                   </div>
                 </div>
               </div>

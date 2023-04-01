@@ -24,6 +24,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/marquees.js", "lib/swell/init/client.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/marquees.js", "lib/swell/init/client.ts", "provider/storefront-provider.js"],
   "exclude": ["node_modules"]
 }

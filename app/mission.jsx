@@ -17,7 +17,7 @@ const Mission = () => {
 
   return (
 
-    <Section id="mission" ref={ref}>   
+    <Section id="mission" >   
       <motion.div style={{y}} className="hidden md:block absolute top-40 -left-44">
         <div className="relative">
           <Image 
@@ -30,7 +30,7 @@ const Mission = () => {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
         <div className="relative col-span-1 z-30">
           <div className="shrink-0">
             <h2 className="block shrink-0 border-4 border-black rounded-sm px-3 py-2 text-6xl font-black uppercase">Mission</h2>
