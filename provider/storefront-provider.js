@@ -7,6 +7,7 @@ export const StorefrontContext = React.createContext()
 export const StorefrontProvider = ({ children }) => {
 
   const [open, setOpen] = useState(false);
+  const [navOpen, setNavOpen ] = useState(false)
   const [loading, setLoading] = useState(false);
   const [body, setBody] = useState(null);
 
@@ -15,10 +16,15 @@ export const StorefrontProvider = ({ children }) => {
   }, [])
 
 
-  const { cart, setCart, getCart, addItem, clearCart } = useCart()
+  const { cart, setCart, getCart, addItem, clearCart, removeItem } = useCart()
 
   const toggleCart = () => {
     setOpen(!open)
+    body.classList.toggle("overflow-hidden")
+  }
+
+  const toggleNav = () => {
+    setNavOpen(!navOpen)
     body.classList.toggle("overflow-hidden")
   }
 
@@ -30,12 +36,16 @@ export const StorefrontProvider = ({ children }) => {
         cart,
         getCart,
         addItem,
+        removeItem,
         clearCart,
         open,
+        navOpen,
+        setNavOpen,
         setOpen,
         loading,
         setLoading,
         toggleCart,
+        toggleNav,
       }}>
       {children}
     </StorefrontContext.Provider>

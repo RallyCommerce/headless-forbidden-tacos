@@ -21,7 +21,9 @@ const Cart = () => {
     cart,
     getCart,
     open,
-    toggleCart
+    toggleCart,
+    clearCart,
+    removeItem
   } = useContext(StorefrontContext);
 
 
@@ -106,16 +108,23 @@ const Cart = () => {
                           
                         />
                       </div>
-                      <div className="">
-                        <p className="font-bold">{item.product.name}</p>
-                        <p className="text-sm">{item.variant?.name}</p>
-                        {item.purchase_option?.type === 'subscription' && (
-                          <span className="flex items-center space-x-1">
-                            <UpdateIcon className="h-3 w-3" />
-                            <p className="text-xs">{item.purchase_option?.plan_description}</p>
-                          </span>
-                        )}
-                        <p className="text-xs">Q: {item.quantity}</p>
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <p className="font-bold">{item.product.name}</p>
+                          <p className="text-sm">{item.variant?.name}</p>
+                          {item.purchase_option?.type === 'subscription' && (
+                            <span className="flex items-center space-x-1">
+                              <UpdateIcon className="h-3 w-3" />
+                              <p className="text-xs">{item.purchase_option?.plan_description}</p>
+                            </span>
+                          )}
+                          <p className="text-xs">Q: {item.quantity}</p>
+                        </div>
+                        <div>
+                          <button type="button" onClick={() => removeItem(item.id).then(getCart())} className="focus:outline-none">
+                            <Cross2Icon className="w-4 h-4" />
+                          </button>
+                        </div>
                       </div>
                     </motion.div>
                   ))}

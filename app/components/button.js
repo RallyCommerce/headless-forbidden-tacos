@@ -8,12 +8,12 @@ const scrollTo = (id) => {
 };
 
 
-const Button = ({id, cta}) => {
+const Button = ({id, cta, classes}) => {
   return (
     <button
       onClick={() => scrollTo(id)}
       type="button"
-      className="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl">
+      className={`${classes}`}>
       {cta}
     </button>
   );
