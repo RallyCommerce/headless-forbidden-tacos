@@ -27,12 +27,12 @@ const RadioGroupItem = React.forwardRef<
     <RadioGroupPrimitive.Item
       ref={ref}
       className={cn(
-        "relative mt-2 mr-4 flex items-center hover:border-slate-400 focus:outline-none",
+        "relative flex items-center hover:border-slate-400 focus:outline-none",
         className
       )}
       {...props}
     >
-      <RadioGroupPrimitive.Indicator className="absolute -inset-1 scale-105 border-2 border-black rounded-full" />
+      <RadioGroupPrimitive.Indicator className="z-40 absolute inset-0 h-full w-full border-2 border-black rounded-sm" />
       {children}
     </RadioGroupPrimitive.Item>
   )

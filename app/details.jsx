@@ -56,7 +56,7 @@ const Details = ({ product }) => {
     <div className="flex flex-col justify-between px-3 md:px-5 py-5 space-y-6">
       <div>
         <div className="flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-brigh-blue-900">{name}</h1>
+          <h1 className="text-4xl md:text-6xl font-black uppercase">{name}</h1>
         </div>
         <div className="mt-5 text-l md:text-xl text-bright-blue-900" dangerouslySetInnerHTML={{ __html: description }} />
       </div>
@@ -111,7 +111,7 @@ const Details = ({ product }) => {
       <div className="flex w-full">
         <button 
           type="button"
-          className="w-full rounded-sm bg-black text-white text-md uppercase font-bold px-5 py-8 shadow-md" 
+          className="w-full rounded-sm bg-white border-4 border-black text-black text-xl uppercase font-bold px-3 py-5 shadow-md" 
           onClick={() => {
             setLoading(true)
             addItem({product_id: id, quantity: 1, variant_id: variant?.variant_id, purchase_option: purchaseOptions}).then(
@@ -126,7 +126,7 @@ const Details = ({ product }) => {
             )
           }}
         >
-          {loading ? "Adding to cart..." : `Add ${product.name} to Cart`}
+          {loading ? "Adding to cart..." : `Add to Cart`}
         </button>
       </div>
     </div>

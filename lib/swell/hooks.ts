@@ -2,46 +2,27 @@
 
 import { swell } from "./init/client";
 import { useEffect, useState } from 'react'
-import { CartItem } from "swell-js/types/cart";
-
 
   
 
 // useCart returns the current cart and functions to add, remove, and update items in the cart.
 export const useCart = () => {
 
-  const [cart, setCart] = useState<swell.Cart>();
-
-  const addItem = async (item: CartItem) => {
-    await swell.cart.addItem(item)
-  }
-
-  const removeItem = async (item: string) => {
-    await swell.cart.removeItem(item);
-  }
-
-  const clearCart = async () => {
-    await swell.cart.setItems([])
-  }
-
-  const getCart = async () => {
-    // get the cart from swell with useEffect
-    let cart = await swell.cart.get() || {};
-    setCart(cart)
-  }
+  const [cart, setCart] = useState<any>();
 
   useEffect(() => {
-    getCart()
+    const getCart = async () => {
+      const cart = await swell.cart.get()
+      return cart
+    }
+
+    getCart().then((cart) => {
+      setCart(cart)
+    })
   }, [])
 
-
   return { 
-    cart,
-    setCart,
-    getCart,
-    addItem,
-    clearCart,
-    removeItem,
+   cart, setCart
   }
 }
 
