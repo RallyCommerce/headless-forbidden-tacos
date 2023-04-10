@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="z-40 transition overflow-x-hidden">
+      <header className="z-50 transition overflow-x-hidden">
         <div className="max-w-7xl w-full mx-auto px-3 py-3 bg-transparent">
           <div className="grid grid-cols-2 md:grid-cols-5 items-center">
             <div className="hidden col-span-2 md:grid grid-cols-2">

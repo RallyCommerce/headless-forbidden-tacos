@@ -121,7 +121,7 @@ export default async function Home() {
             <p className="text-xl font-light uppercase">learn more about how this website was built using composable commerce. </p>
             <div className="mt-5">
               <Link 
-                href="/" 
+                href="/discover" 
                 className="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl">
                   Discover
               </Link>
