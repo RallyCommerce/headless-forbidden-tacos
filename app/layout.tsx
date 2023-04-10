@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="min-h-screen h-full gradient overflow-x-hidden">
+      <body className="min-h-screen h-full gradient overflow-x-none">
         <StorefrontProvider>
           <Navigation />
           <Cart />
@@ -22,10 +22,10 @@ export default function RootLayout({
           <div className="bg-white w-full">
             <div className="flex justify-between items-center py-5 px-3">
               <div>
-                <p className="text-sm font-bold">© 2021 Forbidden Tacos</p>
+                <p className="text-sm font-bold">© 2023 Forbidden Tacos</p>
               </div>
               <div>
-                <p className="text-sm font-bold uppercse">@FORBIDDEN_TACOS_</p>
+                <p className="text-sm font-bold uppercse">@FORBIDDEN_TACOS</p>
               </div>
             </div>
           </div>

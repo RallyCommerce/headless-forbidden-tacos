@@ -104,6 +104,32 @@ self.__RSC_MANIFEST={
         "async": false
       }
     },
+    "(app-client)/./app/help-us.jsx": {
+      "": {
+        "id": "(sc_client)/./app/help-us.jsx",
+        "name": "",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "*": {
+        "id": "(sc_client)/./app/help-us.jsx",
+        "name": "*",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/help-us.jsx",
+        "name": "default",
+        "chunks": [
+          "app/page:app/page"
+        ],
+        "async": false
+      }
+    },
     "(app-client)/./app/mission.jsx": {
       "": {
         "id": "(sc_client)/./app/mission.jsx",
@@ -502,6 +528,32 @@ self.__RSC_MANIFEST={
     },
     "default": {
       "id": "(app-client)/./app/details.jsx",
+      "name": "default",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    }
+  },
+  "/Users/chrisc/Desktop/Rally/headless-forbidden-tacos/app/help-us.jsx": {
+    "": {
+      "id": "(app-client)/./app/help-us.jsx",
+      "name": "",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "*": {
+      "id": "(app-client)/./app/help-us.jsx",
+      "name": "*",
+      "chunks": [
+        "app/page:app/page"
+      ],
+      "async": false
+    },
+    "default": {
+      "id": "(app-client)/./app/help-us.jsx",
       "name": "default",
       "chunks": [
         "app/page:app/page"

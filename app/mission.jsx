@@ -12,13 +12,15 @@ const Mission = () => {
     target: ref,
   });
   
-  let y = useTransform(scrollYProgress, [0, 0.75], ["0%", "100%"])
+  let y = useTransform(scrollYProgress, [0, 1], [0, 300])
+  let yy = useTransform(scrollYProgress, [0, 1], [0, 600])
+  let yyy = useTransform(scrollYProgress, [0, 1], [0, 1000])
 
 
   return (
 
-    <Section id="mission" >   
-      <motion.div style={{y}} className="hidden md:block absolute top-40 -left-44">
+    <Section id="mission" ref={ref} >   
+      <motion.div style={{y: yyy}} className="hidden md:block absolute top-40 -left-48">
         <div className="relative">
           <Image 
             src="/taco-diagonal.png" 
@@ -30,10 +32,10 @@ const Mission = () => {
         </div>
       </motion.div>
 
-      <div ref={ref} className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
         <div className="relative col-span-1 z-30">
-          <div className="shrink-0">
-            <h2 className="block shrink-0 border-4 border-black rounded-sm px-3 py-2 text-6xl font-black uppercase">Mission</h2>
+          <div className="flex">
+            <h2 className="items-start border-4 border-black rounded-sm px-3 py-2 text-6xl font-black uppercase">Mission</h2>
           </div>
           <p className="mt-5 text-xl font-light">
             2022 signaled an ignoble infringement upon one of our most cherished traditions - the
@@ -51,7 +53,7 @@ const Mission = () => {
           </p>
           <Button classes="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl" cta="Wear For a Cause" id="product" />
           
-          <motion.div style={{y}} className="z-10 hidden md:block absolute top-0 -right-44">
+          <motion.div style={{y: yy}} className="z-10 hidden md:block absolute top-0 -right-52">
             <div className="relative">
               <Image src="/taco-diagonal-flip.png" 
                 alt="Chaco Taco" 

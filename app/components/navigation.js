@@ -3,7 +3,7 @@
 import { useEffect, useContext } from 'react'
 import Link from 'next/link'
 import Button from './button'
-import { BackpackIcon, HamburgerMenuIcon } from "@radix-ui/react-icons";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { StorefrontContext } from "@/provider/storefront-provider";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -49,9 +49,9 @@ const Navigation = () => {
               <button type="button" className="md:hidden">
                 <HamburgerMenuIcon onClick={() => toggleNav(!navOpen)} className="w-6 h-6 mr-2 text-black" />
               </button>
-              <div className="flex items-center border-4 border-black px-3">
+              <Link href="/" className="flex items-center border-4 border-black px-3">
                 <span className="uppercase text-black font-bold">Forbidden <br/> Tacos</span>
-              </div>
+              </Link>
             </div>
             <div className="hidden col-span-2 md:grid grid-cols-2">
               <div className="flex justify-center items-center">

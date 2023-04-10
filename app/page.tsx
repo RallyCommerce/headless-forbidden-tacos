@@ -7,7 +7,7 @@ import Details from './details'
 import Button from './components/button'
 import Section from './components/section'
 import Mission from './mission'
-
+import HelpUs from './help-us'
 
 const forbidden = [
   {
@@ -60,7 +60,7 @@ export default async function Home() {
       </div>
 
       <Section id="forbidden">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-start">
           {forbidden.map((item, index) => (
             <div key={index} className="mt-5">
               <span className="flex-shrink border-4 border-black rounded-sm px-3 py-2 font-black uppercase text-2xl md:text-4xl">Forbidden</span>
@@ -74,30 +74,7 @@ export default async function Home() {
 
       <Mission />
 
-      <Section id="help" >
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-          <div className="col-span-1 md:-mr-32 flex justify-end items-center relative w-full h-[300px] md:h-[800px] p-5">
-            <Image src="/taco-pouch.png" 
-              alt="Chaco Taco" 
-              fill
-              className="object-contain object-center"
-            />
-          </div>
-          <div className="col-span-1">
-            <h2 className="text-8xl md:text-9xl font-black uppercase">Help<span className="font-light">Us</span></h2>
-            <p className="mt-5 text-xl font-light">You can join the fight to bring back the forbidden ice cream taco by helping us spread awareness of our mission. Here are the best ways to do that.</p>
-            <ul className="list-disc list-inside ml-5">
-              <li>Sharing on social media</li>
-              <li>Telling your friends</li>
-              <li>Calling your congressman</li>
-              <li>Wearing our merch</li>
-              <li>Getting our logo tattooed</li>
-            </ul>
-            <p className="mt-5 text-xl font-light">You can even use our media kit to get you started.</p>
-          </div>
-        </div>
-      </Section>
+      <HelpUs />
 
       <div className="my-5 md:my-10 py-5 relative bg-white w-full">
         <MarqueeText direction='right' repeat={20} speed='40' classes='font-black text-2xl md:text-5xl' text="SHOP" />
@@ -121,7 +98,7 @@ export default async function Home() {
         <div className="grid grid-cols-1 gap-0 items-center">
           <div className="col-span-1">
             <div className="flex justify-center">
-              <h2 className="text-7xl md:text-9xl font-bold uppercase flex items-center">Conta<img src="/taco-c.png" alt="taco-c" className="w-12 md:w-16" />t</h2>
+              <h2 className="text-7xl md:text-[12rem] font-bold uppercase flex items-center">Conta<img src="/taco-c.png" alt="taco-c" className="w-10 md:w-20" />t</h2>
             </div>
             <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
               <div className="col-span-1">

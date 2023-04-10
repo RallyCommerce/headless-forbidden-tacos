@@ -1,20 +1,29 @@
 'use client'
 
 import React, { useContext } from 'react';
-
+import Link from 'next/link';
 import { StorefrontContext } from '@/provider/storefront-provider';
-
+import { useRouter } from 'next/navigation';
 import { Cross2Icon } from '@radix-ui/react-icons';
 import { motion, AnimatePresence } from 'framer-motion';
 
-import Button from './button';
+
 
 const Nav = () => {
+
+
+  const router = useRouter();
 
   const {
     navOpen,
     toggleNav
   } = useContext(StorefrontContext);
+
+
+  const onNavigate = (path) => {
+    toggleNav(!navOpen);
+    router.push(path);
+  };
 
   return ( 
 
@@ -44,19 +53,9 @@ const Nav = () => {
               </div>
               <div>
                 <div className="flex flex-col items-start mt-10">
-                  <Button 
-                    action={() => toggleNav(!navOpen)}
-                    classes="text-black text-xl"
-                    cta="Mission"
-                    id="mission"
-                  />
-                  <Button 
-                    onClick={() => toggleNav(!navOpen)}
-                    classes="text-black text-xl"
-                    cta="Help Us"
-                    id="help"
-                  />
-                </div>
+                  <button type="button" onClick={() => onNavigate('/')} className="text-black text-xl">Home</button>
+                  <button type="button" onClick={() => onNavigate('/discover')} className="text-black text-xl">Discover</button>
+                 </div>
               </div>
             </div>
           </motion.div>
