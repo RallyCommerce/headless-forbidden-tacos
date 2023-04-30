@@ -4,8 +4,8 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["cdn.schema.io"],
-  }
+    domains: ['cdn.schema.io', 'cdn.swell.store'],
+  },
 }
 
 module.exports = nextConfig

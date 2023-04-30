@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body className="min-h-screen h-full gradient overflow-x-none">
+      <body className="min-h-screen h-full gradient">
         <StorefrontProvider>
           <Navigation />
           <Cart />

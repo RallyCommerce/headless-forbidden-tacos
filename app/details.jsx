@@ -18,9 +18,11 @@ import Option from "@/app/components/options/option"
 
 const Details = ({ product }) => {
 
-  const { addItem, getCart, loading, setLoading, toggleCart } = useContext(StorefrontContext)
+  const { addItem, getCart, toggleCart } = useContext(StorefrontContext)
 
-  const { id, name, description} = product;
+  const [loading, setLoading] = useState(false)
+
+  const { id } = product;
   const { options } = useOptions(product)
   const [selectedOptions, setSelectedOptions] = useState({});
   const [purchaseOptions, setPurchaseOptions] = useState({})
@@ -53,14 +55,7 @@ const Details = ({ product }) => {
 
 
   return (
-    <div className="flex flex-col justify-between px-3 md:px-5 py-5 space-y-6">
-      <div>
-        <div className="flex items-center justify-center">
-          <h1 className="text-4xl md:text-6xl font-black uppercase">{name}</h1>
-        </div>
-        <div className="mt-5 text-l md:text-xl text-bright-blue-900" dangerouslySetInnerHTML={{ __html: description }} />
-      </div>
-   
+    <div className="flex flex-col justify-between">
 
         {options && (
           <div className="flex flex-col space-y-5">
@@ -108,7 +103,7 @@ const Details = ({ product }) => {
 
 
       
-      <div className="flex w-full">
+      <div className="flex w-full mt-5 md:mt-10">
         <button 
           type="button"
           className="w-full rounded-sm bg-white border-4 border-black text-black text-xl uppercase font-bold px-3 py-5 shadow-md" 
