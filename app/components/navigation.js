@@ -30,7 +30,7 @@ const Navigation = () => {
 
   return (
     <>
-      <header className="z-50 transition overflow-x-hidden">
+      <header className="z-30 transition overflow-x-hidden">
         <div className="max-w-7xl w-full mx-auto px-3 py-3 bg-transparent">
           <div className="grid grid-cols-2 md:grid-cols-5 items-center">
             <div className="hidden col-span-2 md:grid grid-cols-2">
@@ -53,7 +53,7 @@ const Navigation = () => {
                 <span className="uppercase text-black font-bold">Forbidden <br/> Tacos</span>
               </Link>
             </div>
-            <div className="hidden col-span-2 md:grid grid-cols-2">
+            <div className="hidden col-span-2 md:grid grid-cols-2 flex items-center">
               <div className="flex justify-center items-center">
                 <Button 
                   classes="text-white bg-black rounded-sm px-5 py-2 text-xl shrink-0"
@@ -66,26 +66,44 @@ const Navigation = () => {
                 cta="Contact"
                 id="contact"
               />
+               <AnimatePresence>
+                {cart?.item_quantity > 0 && (
+                  <motion.button 
+                    type="button" 
+                    onClick={() => toggleCart(!open)} 
+                    initial={{ x: 50 }}
+                    animate={{ x: 5 }}
+                    transition={{ ease: "easeOut", type: "spring", stiffness: 100 }}
+                    exit={{ x: 50 }}
+                    className="hidden md:block fixed right-10 px-3 py-2 min-w-[50px] text-sm text-gray-700 font-semibold rounded-full bg-yellow-400  hover:bg-red-500 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 flex items-center"
+                  >
+                    <span className="uppercase mr-1">Cart</span>
+                    {cart?.item_quantity || 0}
+                  </motion.button>
+                )}
+              </AnimatePresence>
+            </div>
+            <div className="md:hidden col-span-1 flex justify-end md:justify-center items-center">
+              <AnimatePresence>
+                {cart?.item_quantity > 0 && (
+                  <motion.button 
+                    type="button" 
+                    onClick={() => toggleCart(!open)} 
+                    initial={{ x: 50 }}
+                    animate={{ x: 5 }}
+                    transition={{ ease: "easeOut", type: "spring", stiffness: 100 }}
+                    exit={{ x: 50 }}
+                    className="px-3 py-2 min-w-[50px] text-sm text-gray-700 font-semibold rounded-full bg-yellow-400  hover:bg-red-500 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 flex items-center"
+                  >
+                    <span className="uppercase mr-1">Cart</span>
+                    {cart?.item_quantity || 0}
+                  </motion.button>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </div>
       </header>  
-      <AnimatePresence>
-          {cart?.item_quantity > 0 && (
-            <motion.button 
-              type="button" 
-              onClick={() => toggleCart(!open)} 
-              initial={{ x: 50 }}
-              animate={{ x: 5 }}
-              transition={{ ease: "easeOut", type: "spring", stiffness: 100 }}
-              exit={{ x: 50 }}
-              className="fixed top-5 md:top-24 z-50 right-0 pl-3 pr-5 py-2 min-w-[50px] text-sm text-gray-700 font-semibold rounded-l-full bg-yellow-500  hover:bg-red-500 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 flex items-center"
-            >
-              <span className="uppercase mr-1">Cart</span>
-              {cart?.item_quantity || 0}
-            </motion.button>
-          )}
-        </AnimatePresence>
     </>
   )
 }

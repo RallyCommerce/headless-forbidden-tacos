@@ -20,7 +20,7 @@ const HelpUs = () => {
 
     <div id="help" className="my-5 md:my-10 pt-0 pb-5 md:py-10 max-w-7xl w-full mx-auto px-3 relative">
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-cente overflow-hidden">
       <motion.div transition={{y: floating, x: floating}} animate={{y: ["-10px", "15px", "-5px", "15px"], x: ["-5px", "10px", "-15px", "12px"]}} className="col-span-1 md:-mr-32 flex justify-end items-center relative w-full h-[300px] md:h-[800px] p-5">
         <Image src="/taco-pouch.png" 
           alt="Chaco Taco" 

@@ -14,11 +14,8 @@ export const StorefrontProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [navOpen, setNavOpen ] = useState(false)
   const [loading, setLoading] = useState(false);
-  const [body, setBody] = useState(null);
 
-  useEffect(() => {
-    setBody(document.querySelector("body"))
-  }, [])
+
 
 
   const { cart, setCart } = useCart()
@@ -42,13 +39,13 @@ export const StorefrontProvider = ({ children }) => {
 
   const toggleCart = () => {
     setOpen(!open)
-    body.classList.toggle("overflow-hidden")
+    document.querySelector("body").classList.toggle("overflow-hidden")
   }
 
 
   const toggleNav = () => {
     setNavOpen(!navOpen)
-    body.classList.toggle("overflow-hidden")
+    document.querySelector("body").classList.toggle("overflow-hidden")
   }
 
 

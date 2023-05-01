@@ -1,13 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { MarqueeText } from './components/marquees'
-import { getProductBySlug } from '@/lib/swell/products'
+import { getProductBySlug, getProductsByCategory } from '@/lib/swell/products'
 import Carousel from './carousel'
 import Details from './details'
 import Button from './components/button'
 import Section from './components/section'
 import Mission from './mission'
 import HelpUs from './help-us'
+import { Key } from 'react'
 
 const forbidden = [
   {
@@ -27,7 +28,7 @@ const forbidden = [
 
 export default async function Home() {
 
-  const product = await getProductBySlug('forbidden-taco-shirt')
+  const products = await getProductsByCategory('64469ec56be7af00123ffca8')
 
   return (
    <main>
@@ -84,13 +85,21 @@ export default async function Home() {
         <h3 className="text-2xl md:text-4xl font-black uppercase">Make A Statement</h3>
         <p className="text-xl font-light uppercase">Wear your support for bringing back The Forbidden Taco. Stand with us and
         together we can ensure the return of this classic dessert.</p>
-        <div className="mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-3 md:gap-5">
-          <div className="col-span-1 md:col-span-2 h-[400px] md:h-[700px]">
-            <Carousel product={product} />
-          </div>
-          <div className="col-span-1">
-            <Details product={product} />
-          </div>
+        <div className="mt-5 md:mt-10 grid grid-cols-1 md:grid-cols-2 md:gap-5 space-y-10 md:space-y-0">
+          {products.map((product: any, index: Key | null | undefined) => (
+            <div key={index} className="col-span-1 flex flex-col justify-between">
+              <div className="w-full">
+                <div className="relative w-full h-[400px] md:h-[600px]">
+                  <Carousel product={product} />
+                </div>
+                <h1 className="text-3xl md:text-5xl font-black uppercase mt-5 md:mt-10">{product.name}</h1>
+                <div className="mt-5 text-l md:text-xl text-bright-blue-900" dangerouslySetInnerHTML={{ __html: product.description }} />
+              </div>
+              <div className="w-full mt-10">
+                <Details product={product} />
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
 

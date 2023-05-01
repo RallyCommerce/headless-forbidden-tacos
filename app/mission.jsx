@@ -33,7 +33,7 @@ const Mission = () => {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-center">
-        <div className="relative col-span-1 z-30">
+        <div className="relative col-span-1 z-10 md:z-20">
           <div className="flex">
             <h2 className="items-start border-4 border-black rounded-sm px-3 py-2 text-6xl font-black uppercase">Mission</h2>
           </div>

@@ -26,7 +26,7 @@ const Option = ({ option, setSelectedOptions }) => {
             </span>
           </Label>
           <RadioGroup defaultValue={activeOption} onValueChange={(value) => setActiveOption(value)}>
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-5 gap-3 mt-2">
                 {option.values.map((value, i) => (
                    <RadioGroupItem key={i} value={value} id={value.id} >
                     {value.image && (
@@ -41,7 +41,7 @@ const Option = ({ option, setSelectedOptions }) => {
                     )}
               
                     {!value.image && (
-                      <div className="text-xs md:text-base uppercase w-full py-3 rounded-sm bg-white relative flex items-center justify-center">
+                      <div className="text-xs md:text-base uppercase w-full h-full py-3 rounded-sm bg-white relative flex items-center justify-center">
                         {value.name}
                       </div>
                     )}
