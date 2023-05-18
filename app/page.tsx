@@ -40,7 +40,7 @@ export default async function Home() {
             <h1 className="md:hidden text-6xl text-center md:text-left font-black uppercase">Forbidden <br /> Tacos</h1>
             <div className="hidden md:block">
               <p className="text-2xl md:text-4xl uppercase text-black font-light">Show your passion to bring back the ultimate dessert</p>
-              <Button classes="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl" cta="Wear For a Cause" id="product" />
+              <Button classes="bg-white border-4 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl" cta="Wear For a Cause" id="product" />
             </div>
           </div>     
 
@@ -52,9 +52,9 @@ export default async function Home() {
             />
           </div>
 
-          <div className="block md:hidden flex flex-col items-center justify-center">
+          <div className="md:hidden flex flex-col items-center justify-center">
             <p className="text-2xl md:text-4xl uppercase text-black font-light text-center">Show your passion to bring back the ultimate dessert</p>
-            <Button classes="bg-white border-2 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl" cta="Wear For a Cause" id="product" />
+            <Button classes="bg-white border-4 border-black text-black px-5 py-3 rounded-sm mt-5 min-w-[250px] uppercase font-bold text-xl" cta="Wear For a Cause" id="product" />
           </div>
         </div>
           

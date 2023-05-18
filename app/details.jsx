@@ -58,7 +58,7 @@ const Details = ({ product }) => {
     <div className="flex flex-col justify-between">
 
         {options && (
-          <div className="flex flex-col space-y-5">
+          <div className="relative flex flex-col space-y-5">
             {options.map((option) => (
                <Option key={option.id} option={option} setSelectedOptions={setSelectedOptions} />
             ))}
