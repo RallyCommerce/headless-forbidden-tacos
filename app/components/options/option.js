@@ -18,7 +18,7 @@ const Option = ({ option, setSelectedOptions }) => {
 
   return(
     <div>
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center relative z-10">
           <Label>
             {option?.name}:{" "}
             <span>
